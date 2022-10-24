@@ -14,6 +14,11 @@ public class Radio {
     private int currentVolume;
     private int size = 10;
 
+    public Radio(){
+
+    }
+
+
     public Radio(int maxStation, int minStation, int currentStation, int minVolume, int maxVolume, int currentVolume, int size) {
         this.maxStation = maxStation;
         this.minStation = minStation;
@@ -25,7 +30,7 @@ public class Radio {
     }
 
     public Radio(int size) {
-        this.size = size;
+        this.maxStation = size - 1;
     }
 
     public int getMaxStation() {
@@ -48,7 +53,7 @@ public class Radio {
         return currentStation;
     }
 
-    public void setCurrentStation(int currentStation) {
+    public void setCurrentStationLombok(int currentStation) {
         this.currentStation = currentStation;
     }
 
@@ -74,6 +79,50 @@ public class Radio {
 
     public void setCurrentVolume(int currentVolume) {
         this.currentVolume = currentVolume;
+    }
+
+    public void setCurrentStation(int newCurrentStation) {
+        if (newCurrentStation > maxStation) {
+            return;
+        }
+        if (newCurrentStation < minStation) {
+            return;
+        }
+        currentStation = newCurrentStation;
+    }
+
+
+    public void next(int currentStation) {
+        if (currentStation < maxStation) {
+            this.currentStation = currentStation + 1;
+        } else {
+            this.currentStation = minStation;
+        }
+    }
+
+    public void prev(int currentStation) {
+        if (currentStation > minStation) {
+            this.currentStation = currentStation - 1;
+        } else {
+            this.currentStation = maxStation;
+        }
+    }
+
+
+    public void increaseVolume(int currentVolume) {
+        if (currentVolume < maxVolume) {
+            this.currentVolume = currentVolume + 1;
+        } else {
+            this.currentVolume = currentVolume;
+        }
+    }
+
+    public void decreaseVolume(int currentVolume) {
+        if (currentVolume > minVolume) {
+            this.currentVolume = currentVolume - 1;
+        } else {
+            this.currentVolume = currentVolume;
+        }
     }
 }
 
