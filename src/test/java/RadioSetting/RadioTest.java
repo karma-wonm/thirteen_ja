@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RadioTest {
 
 
-    //11 тестов
+ /*   //11 тестов
 
     @ParameterizedTest
     @CsvFileSource(resources = "/data.csv")
@@ -75,5 +75,5 @@ public class RadioTest {
 
         assertEquals(expected, radio.getMaxStation());
         assertEquals(expected = 0,radio.getMinStation() );
-    }
+    }*/
 }
