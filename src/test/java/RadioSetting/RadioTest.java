@@ -66,4 +66,27 @@ public class RadioTest {
 
         assertEquals(expected, actual);
     }
+    @Test
+
+    public void setCurrentVolumeAboveMax(){
+        Radio radio = new Radio();
+        int currentVolume = 15;
+        radio.setCurrentVolume(currentVolume);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void setCurrentVolumeBelow(){
+        Radio radio = new Radio();
+        int currentVolume = -19;
+        radio.setCurrentVolume(currentVolume);
+
+        int expected = 0;
+        int actual = radio.getCurrentVolume();
+
+        assertEquals(expected, actual);
+    }
 }
