@@ -40,20 +40,23 @@ public class Radio {
 
         return currentVolume;
     }
+    public void setCurrentVolume(int currentVolume){
+        this.currentVolume = currentVolume;
+    }
 
-    public void increaseVolume(int currentVolume) {
+    public void increaseVolume() {
         if (currentVolume < 10) {
             this.currentVolume = currentVolume + 1;
         } else {
-            this.currentVolume = currentVolume * 1;
+            this.currentVolume = currentVolume;
         }
     }
 
-    public void decreaseVolume(int currentVolume) {
+    public void decreaseVolume() {
         if (currentVolume > 0) {
             this.currentVolume = currentVolume - 1;
         } else {
-            this.currentVolume = currentVolume * 1;
+            this.currentVolume = currentVolume;
         }
     }
 }

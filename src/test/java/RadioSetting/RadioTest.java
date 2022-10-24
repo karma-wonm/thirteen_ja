@@ -47,7 +47,8 @@ public class RadioTest {
     @CsvFileSource(resources = "/volumeIncrease")
     public void increaseVolume(int currentVolume, int expected) {
         Radio radio = new Radio();
-        radio.increaseVolume(currentVolume);
+        radio.setCurrentVolume(currentVolume);
+        radio.increaseVolume();
 
         int actual = radio.getCurrentVolume();
 
@@ -58,7 +59,8 @@ public class RadioTest {
     @CsvFileSource(resources = "/volumeDescrease")
     public void descreaseVolume(int currentVolume, int expected) {
         Radio radio = new Radio();
-        radio.decreaseVolume(currentVolume);
+        radio.setCurrentVolume(currentVolume);
+        radio.decreaseVolume();
 
         int actual = radio.getCurrentVolume();
 
