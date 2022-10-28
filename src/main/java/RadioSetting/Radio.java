@@ -14,10 +14,8 @@ public class Radio {
     private int currentVolume;
     private int size = 10;
 
-    public Radio(){
-
+    public Radio() {
     }
-
 
     public Radio(int maxStation, int minStation, int currentStation, int minVolume, int maxVolume, int currentVolume, int size) {
         this.maxStation = maxStation;
