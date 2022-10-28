@@ -20,7 +20,8 @@ public class Radio {
     }
 
 
-    public void next(int currentStation) {
+    public void next() {
+        currentStation = getCurrentStation();
         if (currentStation < 9) {
             this.currentStation = currentStation + 1;
         } else {
@@ -28,7 +29,8 @@ public class Radio {
         }
     }
 
-    public void prev(int currentStation) {
+    public void prev() {
+        currentStation = getCurrentStation();
         if (currentStation > 0) {
             this.currentStation = currentStation - 1;
         } else {
