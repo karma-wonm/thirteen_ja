@@ -1,6 +1,7 @@
 package RadioSetting;
 
 import RadioSetting.Radio;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -9,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class RadioTest {
+
 
 
 // //11 тестов
@@ -40,7 +42,8 @@ public void currentStation(int currentStation, int expected) {
     @CsvFileSource(resources = "/dataNext")
     public void nextStation(int currentStation, int expected) {
         Radio radio = new Radio(10);
-        radio.next(currentStation);
+        radio.setCurrentStation(currentStation);
+        radio.next();
 
         int actual = radio.getCurrentStation();
 
@@ -51,7 +54,8 @@ public void currentStation(int currentStation, int expected) {
     @CsvFileSource(resources = "/dataPrev")
     public void prevStation(int currentStation, int expected) {
         Radio radio = new Radio(10);
-        radio.prev(currentStation);
+        radio.setCurrentStation(currentStation);
+        radio.prev();
 
         int actual = radio.getCurrentStation();
 
@@ -62,7 +66,8 @@ public void currentStation(int currentStation, int expected) {
     @CsvFileSource(resources = "/volumeIncrease")
     public void increaseVolume(int currentVolume, int expected) {
         Radio radio = new Radio(10);
-        radio.increaseVolume(currentVolume);
+        radio.setCurrentVolume(currentVolume);
+        radio.increaseVolume();
 
         int actual = radio.getCurrentVolume();
 
@@ -73,7 +78,8 @@ public void currentStation(int currentStation, int expected) {
     @CsvFileSource(resources = "/volumeDescrease")
     public void descreaseVolume(int currentVolume, int expected) {
         Radio radio = new Radio(10);
-        radio.decreaseVolume(currentVolume);
+        radio.setCurrentVolume(currentVolume);
+        radio.decreaseVolume();
 
         int actual = radio.getCurrentVolume();
 
